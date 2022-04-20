@@ -1,0 +1,157 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} 首頁{% endblock %}
+{% block content %} 
+
+
+<body class="landing is-preload">
+    
+
+    <div id="page-wrapper">
+
+        <!-- Header -->
+        {% include "header.html" %}
+
+        <!-- Banner -->
+            <section id="banner">
+                <h2>數位人文與AI增能學術研究網</h2>
+                <p>由國立高雄科技大學應用英語系呈現</p>
+                <ul class="actions special">
+                    {% comment %} <li><a href="#" class="button primary">Sign Up</a></li> {% endcomment %}
+                    <li><a href="#section1" class="button nav-link">關於我們...</a></li>
+                </ul>
+            </section>
+
+        <!-- Main -->
+        
+            <section id="main" class="container">
+                <div id="section1">
+                    <div data-aos="fade-left" data-aos-anchor-placement="top-center">
+                <section class="box special">
+                    <header class="major">
+                        <h2>開場白...
+                        <br />
+                        ...</h2>
+                        <p>開場白介紹</p>
+                    </header>
+                    <span class="image featured"><img src="images/pic01.jpg" alt="" /></span>
+                </section>
+            </div>
+            </div>
+            <div data-aos="fade-right" data-aos-anchor-placement="top-center">
+                <h2>功能介紹</h2>
+                <section class="box special features">
+                    <div class="features-row">
+                        <section>
+                            <span class="icon solid major  fa-thin fa-building-columns accent2"></span>
+                            <h3>DH課程</h3>
+                            <p>...</p>
+                        </section>
+                        <section>
+                            <span class="icon solid major fa-regular fa-code-branch accent3"></span>
+                            <h3>AI增能</h3>
+                            <p>...</p>
+                        </section>
+                    </div>
+                    <div class="features-row">
+                        <section>
+                            <span class="icon solid major fa-regular fa-scroll accent4"></span>
+                            <h3>研究計畫</h3>
+                            <p>...</p>
+                        </section>
+                        <section>
+                            {% comment %} <i class="fa-regular fa-comment"></i> {% endcomment %}
+                            <span class="icon solid major fa-regular fa-comment accent5"></span>
+                            <h3>討論專區</h3>
+                            <p>...</p>
+                        </section>
+                    </div>
+                </section>
+            </div>
+                {% comment %} ----------------------------member card {% endcomment %}
+                <div data-aos="fade-left" data-aos-anchor-placement="top-center">
+                    <h2>教師團隊</h2>
+                    <div class="row">
+                        {% for member in members %}
+                        <div class="col-4 col-12-narrower" style="margin-top:10px">
+                            <div class="card" style="width:400px;height:200px">
+                                <div class="card-body">
+                                    <h4 class="card-title">{{ member.Name }}</h4>
+                                    <p class="card-text">
+                                        職稱:{{ member.Title }}</br>
+                                        專長:{{ member.Expertise }}</br>
+                                        學歷:{{ member.Education }}</br>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor%}
+                    </div>
+                </div>
+                <br>
+                {% comment %} ------------------------------ member {% endcomment %}
+                {% comment %} -----------------------------有按鈕card {% endcomment %}
+                <div data-aos="fade-up" data-aos-anchor-placement="top-center">
+                    <div class="row">
+                        {% for article in articles %}
+                        <div class="col-6 col-12-narrower">
+                            <section class="box special">
+                                <span class="image featured"><img src="images/pic02.jpg" alt="" /></span>
+                                <h3 >{{ article.Chi_title }}</h3>
+                                <p style='text-overflow:ellipsis;overflow:hidden;white-space:nowrap'>{{ article.Content }}</p>
+                                <ul class="actions special">
+                                    <li><a href="#" class="button alt">觀看更多</a></li>
+                                </ul>
+                            </section>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% comment %} ----------------------- {% endcomment %}
+            </section>
+
+        <!-- CTA -->
+            <section id="cta">
+
+                <h2>Sign up for beta access</h2>
+                <p>Blandit varius ut praesent nascetur eu penatibus nisi risus faucibus nunc.</p>
+
+                <form>
+                    <div class="row gtr-50 gtr-uniform">
+                        <div class="col-8 col-12-mobilep">
+                            <input type="email" name="email" id="email" placeholder="Email Address" />
+                        </div>
+                        <div class="col-4 col-12-mobilep">
+                            <input type="submit" value="Sign Up" class="fit" />
+                        </div>
+                    </div>
+                </form>
+
+            </section>
+
+        <!-- Footer -->
+        {% include "footer.html"%}
+
+    </div>
+    {% comment %} <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.dropotron.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script> {% endcomment %}
+    
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/jquery.dropotron.min.js' %}"></script>
+    <script src="{% static 'js/jquery.scrollex.min.js' %}"></script>
+    <script src="{% static 'js/browser.min.js' %}"></script>
+    <script src="{% static 'js/breakpoints.min.js' %}"></script>
+    <script src="{% static 'js/util.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+{% endblock %}
