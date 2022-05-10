@@ -39,54 +39,91 @@
             </div>
             </div>
             <div data-aos="fade-right" data-aos-anchor-placement="top-center">
-                <h2>功能介紹</h2>
-                <section class="box special features">
-                    <div class="features-row">
-                        <section>
+                <h2 style="font-family: 'Noto Sans TC', sans-serif;">功能介紹</h2>
+                {% comment %} <div class="row">
+                    <div class="col-3 col-sm-3 col-md-3">
+                        <span class="icon solid major  fa-thin fa-building-columns " style="margin:auto"></span>
+                        <h3>DH課程</h3>
+                    </div>
+
+                    <div class="col-3 col-sm-3 col-md-3">
+                        <span class="icon solid major fa-regular fa-code-branch accent3"></span>
+                        <h3>AI增能</h3>
+                    </div>
+
+                    <div class="col-3 col-sm-3 col-md-3">
+                        <span class="icon solid major fa-regular fa-scroll accent4"></span>
+                        <h3>研究計畫</h3>
+                    </div>
+
+                    <div class="col-3 col-sm-3 col-md-3">
+                        <span class="icon solid major fa-regular fa-comment accent5"></span>
+                        <h3>討論專區</h3>
+                    </div>
+
+                </div> {% endcomment %}
+                
+                <section class="special features" >
+                    <div class="row">
+                        <section class="col-md-3">
                             <span class="icon solid major  fa-thin fa-building-columns accent2"></span>
-                            <h3>DH課程</h3>
-                            <p>...</p>
+                            <a href="#"><h3>DH課程</h3></a>
                         </section>
-                        <section>
+                        <section class="col-md-3">
+                            <span class="icon solid major fa-regular fa-code-branch accent3"></span>
+                            <a href="#"><h3>AI增能</h3></a>
+                        </section>
+                        <section class="col-md-3">
+                            <span class="icon solid major fa-regular fa-scroll accent4"></span>
+                            <a href="#"><h3>研究計畫</h3></a>
+                        </section>
+
+                        <section class="col-md-3">
+                            <span class="icon solid major fa-regular fa-comment accent5"></span>
+                            <a href="#"><h3>討論專區</h3></a>
+                        </section>
+                        
+                        {% comment %} <section>
                             <span class="icon solid major fa-regular fa-code-branch accent3"></span>
                             <h3>AI增能</h3>
                             <p>...</p>
-                        </section>
+                        </section> {% endcomment %}
                     </div>
-                    <div class="features-row">
+                    {% comment %} <div class="features-row">
                         <section>
                             <span class="icon solid major fa-regular fa-scroll accent4"></span>
                             <h3>研究計畫</h3>
                             <p>...</p>
                         </section>
                         <section>
-                            {% comment %} <i class="fa-regular fa-comment"></i> {% endcomment %}
                             <span class="icon solid major fa-regular fa-comment accent5"></span>
                             <h3>討論專區</h3>
                             <p>...</p>
                         </section>
-                    </div>
+                    </div> {% endcomment %}
                 </section>
             </div>
+            
                 {% comment %} ----------------------------member card {% endcomment %}
                 <div data-aos="fade-left" data-aos-anchor-placement="top-center">
-                    <h2>教師團隊</h2>
-                    <div class="row">
-                        {% for member in members %}
-                        <div class="col-4 col-12-narrower" style="margin-top:10px">
-                            <div class="card" style="width:400px;height:200px">
-                                <div class="card-body">
-                                    <h4 class="card-title">{{ member.Name }}</h4>
-                                    <p class="card-text">
-                                        職稱:{{ member.Title }}</br>
-                                        專長:{{ member.Expertise }}</br>
-                                        學歷:{{ member.Education }}</br>
-                                    </p>
+                    
+                        <h2 style="font-family: 'Noto Sans TC', sans-serif;">專業教師團隊</h2>
+                        <div class="row">
+                            {% for member in members %}
+                            <div class="col-4 col-12-narrower" style="margin-top:10px">
+                                <div class="card" style="width:400px;height:200px">
+                                    <div class="card-body">
+                                        <h4 class="card-title">{{ member.Name }}</h4>
+                                        <p class="card-text">
+                                            職稱:{{ member.Title }}</br>
+                                            專長:{{ member.Expertise }}</br>
+                                            學歷:{{ member.Education }}</br>
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
+                            {% endfor%}
                         </div>
-                        {% endfor%}
-                    </div>
                 </div>
                 <br>
                 {% comment %} ------------------------------ member {% endcomment %}
@@ -113,19 +150,15 @@
         <!-- CTA -->
             <section id="cta">
 
-                <h2>Sign up for beta access</h2>
-                <p>Blandit varius ut praesent nascetur eu penatibus nisi risus faucibus nunc.</p>
+                <h2>您喜歡這個網站嗎</h2>
+                <p>喜歡的話分享此網站，讓更多人知道關於我們</p>
 
-                <form>
-                    <div class="row gtr-50 gtr-uniform">
-                        <div class="col-8 col-12-mobilep">
-                            <input type="email" name="email" id="email" placeholder="Email Address" />
-                        </div>
-                        <div class="col-4 col-12-mobilep">
-                            <input type="submit" value="Sign Up" class="fit" />
+                    <div class="row ">
+                        <div class="col-12">
+                        <button class="btn_share"><strong>Share</strong></button>
                         </div>
                     </div>
-                </form>
+                
 
             </section>
 
