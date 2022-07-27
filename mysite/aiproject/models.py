@@ -17,6 +17,15 @@ class Article(models.Model):
     Data_url = models.CharField(max_length=500) 
     def __str__(self):
         return self.Chi_title
+        
+class AI_Article(models.Model):
+    Chi_title = models.CharField(max_length=500) 
+    Eng_title = models.CharField(max_length=500)
+    Editor = models.CharField(max_length=500)
+    Content = models.CharField(max_length=2000) 
+    Data_url = models.CharField(max_length=500) 
+    def __str__(self):
+        return self.Chi_title
 
 
 

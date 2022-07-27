@@ -120,8 +120,12 @@ USE_TZ = True
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-STATIC_URL = '/static8/'
+STATIC_URL = '/static3/'
 MEDIA_URL = '/images/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static8')
+    os.path.join(BASE_DIR, 'static3')
 ]
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media') 
+#/media/也不一定要叫mdeia，可以改成/aaaaaaa/ ， 看使用者喜好
+MEDIA_URL = '/media/'
